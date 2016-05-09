@@ -26,6 +26,15 @@ module Knock
   mattr_accessor :token_public_key
   self.token_public_key = nil
 
+  mattr_accessor :cookie
+  self.cookie = false
+
+  mattr_accessor :cookie_http_only
+  self.cookie_http_only = true
+
+  mattr_accessor :cookie_secure
+  self.cookie_secure = true
+
   mattr_accessor :not_found_exception_class_name
   self.not_found_exception_class_name = 'ActiveRecord::RecordNotFound'
 

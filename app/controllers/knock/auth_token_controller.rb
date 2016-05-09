@@ -5,6 +5,15 @@ module Knock
     before_action :authenticate!
 
     def create
+      if Knock.cookie
+        cookies[:auth_token] = {
+          value:    auth_token.token,
+          expires:  Knock.token_lifetime.from_now,
+          httponly: Knock.cookie_http_only,
+          secure:   Knock.cookie_secure
+        }
+      end
+
       render json: { jwt: auth_token.token }, status: :created
     end
 
