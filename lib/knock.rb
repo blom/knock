@@ -26,6 +26,9 @@ module Knock
   mattr_accessor :token_public_key
   self.token_public_key = nil
 
+  mattr_accessor :response_body
+  self.response_body = true
+
   mattr_accessor :cookie
   self.cookie = false
 

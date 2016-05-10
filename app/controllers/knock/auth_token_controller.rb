@@ -14,7 +14,11 @@ module Knock
         }
       end
 
-      render json: { jwt: auth_token.token }, status: :created
+      if Knock.response_body
+        render json: { jwt: auth_token.token }, status: :created
+      else
+        head :created
+      end
     end
 
   private
