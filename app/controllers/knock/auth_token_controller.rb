@@ -17,7 +17,7 @@ module Knock
       if Knock.response_body
         render json: { jwt: auth_token.token }, status: :created
       else
-        head :created
+        head :no_content
       end
     end
 
