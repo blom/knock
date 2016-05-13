@@ -32,6 +32,9 @@ module Knock
   mattr_accessor :cookie
   self.cookie = false
 
+  mattr_accessor :cookie_domain
+  self.cookie_domain = nil
+
   mattr_accessor :cookie_http_only
   self.cookie_http_only = true
 

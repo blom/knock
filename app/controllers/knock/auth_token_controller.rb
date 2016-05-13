@@ -8,6 +8,7 @@ module Knock
       if Knock.cookie
         cookies[:auth_token] = {
           value:    auth_token.token,
+          domain:   Knock.cookie_domain,
           expires:  Knock.token_lifetime.from_now,
           httponly: Knock.cookie_http_only,
           secure:   Knock.cookie_secure
